@@ -1,0 +1,183 @@
+.boites li {
+  margin-top: 159px;
+  background-color: #7b12de;
+  color: #fafafa;
+  text-decoration: none;
+  padding: 4em 1em;
+  font-size: 18px;
+  width: 33.21%;
+  font-family: "Montserrat", arial, sans-serif;
+  text-align: center !important;
+  border: 0.2px solid #fafafa;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.05em
+}
+
+.boites li:hover {
+  background-color: #fafafa;
+  color: #7b12de;
+}
+
+.boites {
+	display: inline-flex;
+	width: 100.4%;
+
+}
+
+.descrgant{
+ font-family: "Montserrat", arial, sans-serif;
+  border: 1px solid transparent;
+  padding: 38px;
+  margin: 41px;
+  width: 45%;
+  margin-top: 8%;
+  font-size: 18px;
+  height: 20%;
+  line-height: 160%;
+  letter-spacing: 0.05em;
+  text-align: justify;
+  font-weight: 300;
+  margin-right: 10%;
+  background-color: #EFE8FF;
+
+
+}
+
+.parag1{
+  display: inline-flex;
+}
+
+.bonhomme {
+  width: 40%;
+}
+
+.parag2{
+  display: inline-flex;
+}
+
+.descrappli ul {
+  list-style-type: circle;
+}
+
+.descrappli{
+ font-family: "Montserrat", arial, sans-serif;
+ border: 1px solid transparent;
+ padding: 62px;
+  margin: 41px;
+  width: 50%;
+  margin-top: 8%;
+  margin-left: 8%;
+  font-size: 19px;
+  height: 10%;
+  line-height: 160%;
+  letter-spacing: 0.05em;
+  text-align: justify;
+  font-weight: 300;
+  background-color: #E2C7FF;
+}
+
+.dame {
+  width: 35%;
+  margin-left: 5%;
+}
+
+
+.video {
+  background-color: #DBDBDB;
+  padding-bottom: 4%;
+  margin-block-start: 8%;
+  margin-block-end: 3%;
+}
+
+.vid{
+  margin: 5% auto 3% 28%;
+}
+
+.video p{
+  font-family: "Montserrat", arial, sans-serif;
+  text-align: center;
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 27px;
+}
+
+.savoirplus {
+font-family: "Montserrat", arial, sans-serif;
+font-size: 1.8rem;
+margin-block-start: 20px;
+color: #fafafa;
+text-align: center;
+margin: 0% 9% 6%;
+padding: 5%;
+font-weight: 300;
+position: relative;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+
+}
+
+.button2 {
+  color: black;
+  background:#fafafa ;
+  font-size: 1.4rem;
+  font-weight: 300;
+  padding: 5px 20px;
+  border: 1px solid transparent;
+  border-style: outset;
+  display: inline-block;
+}
+
+.fondtransp2 {
+    position: relative; 
+    height: 34vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fondtransp2::before {    
+      content: "";
+      background-image: url(../images/london.jpg);
+      background-size: cover;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 54px;
+      left: 0px;
+      opacity: 0.7;
+      background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
