@@ -1,0 +1,53 @@
+.tout{
+    background-color:lightgray;
+}
+
+#navz ul  {
+    margin: 0 auto;
+    margin-left: 30%;
+    font-size: 25px;
+    padding: 12px;  
+}
+#navbarNav{
+    color: black;
+}
+.navbar-brand{
+    margin-left: 16%;
+    font-size: large;  
+}
+
+#bande{
+    height:15px;
+    background-color:rgb(66, 223, 66);
+}
+.pro {
+    background-color:rgb(4, 27, 49);
+    color: white;
+    height: inherit;
+    margin-left: 7%;
+    margin-right: 7%;
+
+
+}
+
+
+.msg{
+    background-color:darkblue;
+    top: 10px;
+}
+
+ .coa{
+     text-align: center;
+ }
+
+th{
+    background-color: white;
+}
+/********************************* FOOTER *************************************/
+footer{
+    background-color:gray;
+    color: black;
+    padding: 50px 0 40px 0;
+    text-align: center;
+}
+

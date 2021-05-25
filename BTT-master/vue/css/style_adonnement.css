@@ -1,0 +1,116 @@
+/***************** Nav Bar ****************************/
+#bande{
+    height:15px;
+    background-color:rgb(66, 223, 66);
+    }
+
+
+.ins{
+    margin-left: 3%;
+    font-size: 30px;
+    color: black;
+    font-family: 'Rubik', sans-serif;
+}
+
+.des{
+    position: static;
+    margin-left: 18%;
+    font-size: 15px;
+    color: black;
+    font-family: 'Rubik', sans-serif;
+}
+
+
+
+.navbar-brand{
+    color: greenyellow;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+nav > a:hover{
+    color: green;
+}
+
+li {
+    list-style-type: none;
+    display: inline;
+}
+
+nav{
+    overflow: hidden;
+    background-color: blanchedalmond;
+    position: fixed;
+    width: 100%;
+    opacity: 0,9;
+}
+
+
+p{
+    color: rgb(66, 223, 66);
+}
+
+header li {
+    float: center;
+    font-size: 1.2em;
+}
+
+header li a {
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    padding: 18px 16px;
+}
+
+
+/*******************************  IMAGE PRINCIPALE ******************************************/
+#imageAccueil{
+    padding-top: 60px;
+    background: url(http://localhost/Projets/BTT/vue/image/salle1.jpg) no-repeat fixed 50% 50%;
+    background-size: cover;
+    height: 600px;
+    top: 610px; 
+    right: 970px; 
+}
+
+
+/********************************* FOOTER *************************************/
+footer{
+    background-color: rgba(66, 65, 65, 0.938);
+    color: brown;
+    padding: 50px 0 40px 0;
+    text-align: center;
+}
+
+
+button{
+    position: absolute;
+    top: 390px; 
+    right: 1017px; 
+    font-size: x-large;
+    background-color: transparent;
+    color: rgb(66, 223, 66);
+    width: 220px;
+    height:65px;
+    border: 3px rgb(66, 223, 66) solid;   
+}
+
+
+
+h1{
+    position: absolute;
+    top: 300px; 
+    right: 1150px; 
+    color:white; 
+    font-family: 'Cairo', sans-serif;
+    font-family: 'Libre Baskerville', serif;
+}
+
+#copyright{
+    width:100%;
+    text-align: center;
+    color: black;
+}
