@@ -1,0 +1,88 @@
+
+
+.qstcourantes {
+  max-width: 98rem;
+  margin: 0 auto;
+  font-family: "Montserrat", arial, sans-serif;
+  font-weight: 200;
+  letter-spacing: 0.1em; 
+  text-align: center;
+  margin-top: 150px;
+  background-color: #fafafa;
+  
+
+}
+
+body{
+  background-image: url(qm.jpg);
+  background-repeat: no-repeat;
+  background-origin: border-box;
+  background-size: 135% 100%;
+  padding: 50px 0;
+}
+
+
+.qstcourantes h2{
+  font-size: 3rem;
+  font-weight: 300;
+  color: #7b12de;
+  margin-block-end: 20px;
+  padding: 3rem 1rem 3rem 1rem; 
+  text-transform: uppercase;
+
+}
+
+.question a {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 3rem 1rem 3rem 1rem; 
+  color: #7288a2;
+  font-size: 2rem;
+  font-weight: 300; 
+  border-bottom: 4px solid #e5e5e5;
+  text-transform: uppercase;
+}
+.question a:hover,
+.question a:hover::after {
+  cursor: pointer;
+  color: #0018A8;
+}
+
+.question a.active {
+  color: #0018A8;
+  border-bottom: 1px solid #0018A8;
+}
+.question a::after {
+  font-family: 'Ionicons';
+  content: '\f218';
+  position: absolute;
+  float: right;
+  right: 1rem;
+  color: #7288a2;
+
+}
+.question a.active::after {
+  font-family: 'Ionicons';
+  content: '\f209';
+  color: #0018A8;
+
+}
+.question .content {
+  opacity: 0;
+  padding: 0 1rem;
+  max-height: 0;
+  border-bottom: 1px solid #e5e5e5;
+  overflow: hidden;
+  clear: both;
+} 
+.question .content p {
+  font-size: 1.75rem;
+  font-weight: 300;
+}
+.question .content.active {
+  opacity: 1;
+  padding: 1rem;
+  max-height: 100%;
+}

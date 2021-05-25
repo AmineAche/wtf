@@ -1,0 +1,101 @@
+
+.titre, .cell{
+	border: 1px solid #7b12de;
+	padding: 15px;
+	font-size: 17px;
+	text-align: center;
+}
+
+.titrelarge {
+	padding: 0 40px;
+}
+
+.tableautotal {
+
+	border-collapse: collapse;
+  width: 80%;
+  margin: 69px auto;
+  font-family: "Montserrat", arial, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em; 
+}
+
+img {
+	width: 150px;
+}
+
+.ligne:nth-child(even){background-color: #f2f2f2}
+
+.titrelarge {
+  background-color: #7b12de;
+  color: white;
+  font-size: 17px;
+}
+
+.buttpay {
+  color: #7b12de;
+  font-size: 1.2rem;
+  border: 1px solid #7b12de;
+  border-radius: 0.7rem;
+  padding: 1rem 2rem;
+  font-weight: 500;
+
+}
+.buttpay:hover {
+  background-color: #7b12de;
+  color: #fff;
+}
+
+
+
+.preco h1 {
+	text-align: center;
+  color: #2e4053;
+  font-size: 25px;
+  padding-top: 109px;
+  font-weight: 400;
+  font-family: "Montserrat", arial, sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.05em; 
+}
+
+.preco h1:after {
+  content: "";
+  background: #7b12de;
+  display: block;
+  height: 3px;
+  width: 170px;
+  margin: 20px auto 5px;
+}
+
+.buttonvalid{
+	font-family: "Montserrat", arial, sans-serif;
+  font-weight: 300;
+	color: #fafafa;
+  background: linear-gradient(
+    162deg,
+    rgba(59, 72, 233, 0.7973564425770308) 27%,
+    rgba(87, 78, 236, 0.8897934173669468) 100%,
+    rgba(126, 0, 255, 0.9290091036414566) 100%
+  );
+  font-size: 2rem;
+  padding: 5px 20px;
+  border: 1px solid #7b12de;
+  border-radius: 0.7rem;
+  margin-left: 50%;
+
+}
+
+.buttonvalid:hover {
+  background: linear-gradient(
+    162deg,
+    rgba(59, 72, 233, 0.7973564425770308) 27%,
+    rgba(111, 78, 236, 0.8897934173669468) 47%,
+    rgba(126, 0, 255, 0.9290091036414566) 82%
+  );
+  color: #fafafa;
+}
+
+

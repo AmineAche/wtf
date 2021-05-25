@@ -1,0 +1,235 @@
+<!DOCTYPE > .notreequipe,
+.equipe,
+.membre,
+.membre + .membre,
+.photo,
+.membre h2,
+.membre h3,
+.membre p {
+  font-size: medium;
+  font-family: "Montserrat", arial, sans-serif;
+}
+
+.notreequipe {
+
+  background: linear-gradient(
+    81deg,
+    rgba(154, 181, 255, 0.4192051820728291) 32%,
+    rgba(172, 142, 252, 0.31556372549019607) 67%
+  );
+  padding-top: 100px;
+}
+
+.equipe {
+  display: flex;
+  margin-top: 55px;
+}
+.notreequipe h1 {
+  text-align: center;
+  color: #2e4053;
+  padding-bottom: 10px;
+  font-size: 25px;
+  padding-top: 70px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.notreequipe h1:after {
+  content: "";
+  background: #7b12de;
+  display: block;
+  height: 3px;
+  width: 170px;
+  margin: 20px auto 5px;
+}
+
+.membre {
+
+  border: 20px #7b12de outset;
+  padding: 10px;
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-block-end: 100px;
+}
+
+.photo {
+  width: 199.22px;
+  height: 199.22px;
+  vertical-align: top;
+  filter: grayscale(100%);
+}
+
+.photo:hover {
+
+  filter: grayscale(0%);
+}
+
+.membre h2,
+h3,
+p {
+  margin-top: 10px;
+  color: #2e4053;
+  letter-spacing: 0.06em;
+  
+}
+
+.membre h2,
+h3 {
+  text-align: center;
+  font-weight:400;
+}
+.membre p {
+  text-align: center;
+  font-size: 13px;
+  font-weight:300;
+}
+
+.pbmajeure h1 {
+  text-align: center;
+  color: #2e4053;
+  padding-bottom: 10px;
+  font-size: 25px;
+  padding-top: 70px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.pbmajeure h1:after {
+  content: "";
+  background: #7b12de;
+  display: block;
+  height: 3px;
+  width: 170px;
+  margin: 20px auto 5px;
+}
+
+
+.pbmajeure p {
+  font-size: 18px;
+  text-align: justify;
+  display: block;
+  margin-block-start: 3em;
+  margin-block-end: 1em;
+  margin-inline-start: 4em;
+  margin-inline-end: 4em;
+  font-weight: 300;
+  letter-spacing: 0.06em
+}
+
+.imaginez {
+  color: #7b12de;
+}
+
+.nbaveugles h2 {
+  margin-block-start: 2.5em;
+  color: #fafafa;
+  background: #7b12de;
+  font-size: 2rem;
+  padding: 17px 27px;
+  border: 1px solid transparent;
+  border-radius: 0.7rem;
+  display: inline-block;
+  text-align: center;
+  margin-left: 15%;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  animation: nbaveugles 2s infinite alternate;
+}
+
+@keyframes nbaveugles {
+  0% {
+    border-radius: 5% 5% 5% 5%;
+    background: #8e16ff;
+  }
+  25% {
+    border-radius: 10% 10% 10% 10%;
+    background: #9a18ff;
+  }
+  50% {
+    border-radius: 25% 25% 25% 25%;
+    background: #7b12de;
+  }
+  75% {
+    border-radius: 40% 40% 40% 40%;
+    background: #5622e0;
+  }
+  100% {
+    border-radius: 45%;
+    background: #4c1fc2;
+  }
+}
+
+.notreidee {
+  background: rgb(154, 181, 255);
+  background: linear-gradient(
+    81deg,
+    rgba(154, 181, 255, 0.4192051820728291) 32%,
+    rgba(172, 142, 252, 0.31556372549019607) 67%
+  );
+  padding: 50px 0;
+}
+
+.notreidee p {
+  font-size: 18px;
+  text-align: justify;
+  display: block;
+
+  margin-inline-start: 4em;
+  margin-inline-end: 4em;
+  font-weight: 300;
+  margin-block-start: 3em;
+  margin-block-end: 3em;
+  letter-spacing: 0.06em
+}
+
+
+.notreidee h1 {
+  text-align: center;
+  color: #2e4053;
+  padding-bottom: 10px;
+  font-size: 25px;
+  padding-top: 44px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.notreidee h1:after {
+  content: "";
+  background: #7b12de;
+  display: block;
+  height: 3px;
+  width: 170px;
+  margin: 20px auto 5px;
+}
+
+
+
+.videotitle {
+  background-image: linear-gradient(
+    109.6deg,
+    rgba(9, 9, 121, 1) 11.2%,
+    rgba(144, 6, 161, 1) 53.7%,
+    rgba(0, 212, 255, 1) 100.2%
+  );
+  background-size: 7% 72px;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  font-size: 50px;
+  text-align: center;
+  margin-block-end: 1.5em;
+  animation: mvmt 1.5s linear infinite;
+}
+
+@keyframes mvmt {
+  100% {
+    background-position: 0 -50px;
+  }
+}
+
+.video {
+  margin: 5% auto 3% 28%;
+}

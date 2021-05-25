@@ -1,0 +1,102 @@
+
+
+.contact {
+  font-family: "Montserrat", arial, sans-serif;
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: 0.1em; 
+  width: 100%;
+  height: 100vh;
+  padding-top: 100px;
+  background:linear-gradient(
+      180deg,
+      rgba(30, 78, 255, 0.49) 27%,
+      rgba(87, 70, 236, 0.44) 38%,
+      rgba(190, 183, 245, 0.7749474789915967) 72%,
+      rgba(231, 229, 248, 0.8113620448179272) 81%,
+      rgba(250, 250, 250, 1) 90%), url(fiber.jpg);
+  background-repeat: no-repeat;
+  background-origin: border-box;
+  background-size: 100% 100%;
+
+}
+
+.contact h1 {
+  font-weight: 200;
+  text-align: center;
+  color: #fafafa;
+  padding-bottom: 10px;
+  font-size: 25px;
+  padding-top: 70px;
+  
+}
+
+.contact h1:after {
+  content: "";
+  background: #7b12de;
+  display: block;
+  height: 3px;
+  width: 170px;
+  margin: 20px auto 5px;
+
+}
+
+
+.contact h3{
+	
+
+font-size: 25px;
+font-weight: 200;
+  padding: 0 1.5rem;
+  margin: 0 auto;
+  color: #fafafa;
+  text-align: center;
+  margin-top: 53px;
+}
+
+.contact p{
+	padding: 0 1.5rem;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 53px;
+}
+.buttonff {
+  color: #fafafa;
+  background: linear-gradient(
+    162deg,
+    rgba(59, 72, 233, 0.7973564425770308) 27%,
+    rgba(87, 78, 236, 0.8897934173669468) 100%,
+    rgba(126, 0, 255, 0.9290091036414566) 100%
+  );
+  font-size: 2rem;
+  padding: 5px 20px;
+  border: 1px solid #7b12de;
+  border-radius: 0.7rem;
+  border-style: outset;
+  display: inline-block;
+}
+
+.buttonff:hover {
+  background: linear-gradient(
+    162deg,
+    rgba(59, 72, 233, 0.7973564425770308) 27%,
+    rgba(111, 78, 236, 0.8897934173669468) 47%,
+    rgba(126, 0, 255, 0.9290091036414566) 82%
+  );
+  color: #fafafa;
+}
+
+
+
+.accueil{
+	font-size: 20px;
+	color: #fafafa;
+}
+
+
+
+
+
+
+
+

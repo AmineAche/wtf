@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<?php
+    session_start();
+    if (empty($_SESSION['erreur'])) {
+        $_SESSION['erreur'] = null;
+    }
+?>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <form action="../../controleur/entrainement_maison.php" method="POST">
+        Type d'entrainement: 
+        <div>
+            <input type="checkbox" id="full_body" name="1" value="full_body">
+            <label for="full_body">Full body</label>
+        </div>
+        <div>
+            <input type="checkbox" id="Abdos" name="2" value="abdos">
+            <label for="Abdos">Abdos</label>
+        </div>
+        <div>
+            <input type="checkbox" id="Dos" name="3" value="dos">
+            <label for="Dos">Dos</label>
+        </div>
+        <div>
+            <input type="checkbox" id="Jambes" name="4" value="jambes">
+            <label for="Jambes">Jambes</label>
+        </div>
+        <div>
+            <input type="checkbox" id="Bras" name="5" value="bras">
+            <label for="Bras">Bras</label>
+        </div>
+        <div>
+            <input type="checkbox" id="Pecs" name="6" value="pecs">
+            <label for="Pecs">Pecs</label>
+        </div>
+        <div>
+            <input type="checkbox" id="Epaules" name="7" value="epaules">
+            <label for="Epaules">Epaules</label>
+        </div>
+        <?php
+            echo $_SESSION['erreur']."<br><br>";
+        ?>
+
+        <button>Valider</button>
+    
+    </form>
+    <a href="../../controleur/retour.php">Retour</a>
+    
+</body>
+</html>
