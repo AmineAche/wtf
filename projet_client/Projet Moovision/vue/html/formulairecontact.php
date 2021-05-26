@@ -66,43 +66,48 @@
 <div class="Contactprinc">
 		<div class="contact1">
 
-			<form class="ben">
-				<span class="Titre">
-					Nous contacter
-				</span>
-				<p>Les champs avec <span class="rouge"> *</span> sont obligatoires.</p>
+    <form class="ben" action="../../controleur/formulairecontact.php" method="post">
+                <span class="Titre">
+                    Nous contacter
+                </span>
+                <p>Les champs avec <span class="rouge"> *</span> sont obligatoires.</p>
+        <?php if (isset($_SESSION['Connecté']) && $_SESSION['Connecté'] == true) { ?>
+          <label class="label-clara" for="message">Que voulez vous ? <span class="rouge"> *</span></label>
+                <div class="wrap-clara">
+                    <textarea id="message" class="clara" name="message" placeholder="Ecrivez votre commentaire"></textarea>
+                </div>
+          <?php   } else { ?>
+                <label class="label-clara" >Votre Nom et Prénom<span class="rouge"> *</span></label>
+                <div class="wrap-clara ">
+                    <input class="clara" type="text" name="nom" required="requis" placeholder="Nom de famille">
+                </div>
+                <div class="wrap-clara">
+                    <input class="clara" type="text" name="prenom" placeholder="Prénom">
+                </div>
 
-				<label class="label-clara" >Votre Nom et Prénom<span class="rouge"> *</span></label>
-				<div class="wrap-clara ">
-					<input class="clara" type="text" name="Nom de famille" required="requis" placeholder="Nom de famille">
-				</div>
-				<div class="wrap-clara">
-					<input class="clara" type="text" name="Prenom" placeholder="Prénom">
-				</div>
+                <label class="label-clara" for="email">Adresse e-mail <span class="rouge"> *</span></label>
+                <div class="wrap-clara">
+                    <input id="email" class="clara" type="email" required="requis" name="email" placeholder="Moovision@gmail.com">
+                </div>
 
-				<label class="label-clara" for="email">Adresse e-mail <span class="rouge"> *</span></label>
-				<div class="wrap-clara">
-					<input id="email" class="clara" type="email" required="requis" name="email" placeholder="Moovision@gmail.com">
-				</div>
+                <label class="label-clara" for="tel">Numéro de téléphone</label>
+                <div class="wrap-clara">
+                    <input id="tel" class="clara" type="text" name="tel" placeholder="0656543454">
+                </div>
 
-				<label class="label-clara" for="tel">Numéro de téléphone</label>
-				<div class="wrap-clara">
-					<input id="tel" class="clara" type="text" name="tel" placeholder="0656543454">
-				</div>
-
-				<label class="label-clara" for="message">Que voulez vous ? <span class="rouge"> *</span></label>
-				<div class="wrap-clara">
-					<textarea id="message" class="clara" name="message" placeholder="Ecrivez votre commentaire"></textarea>
-				</div>
-
-				<div class="container-ben-btn">
-					<button type="submit"  name="ben-btn" class="ben-btn">
-						<span>
-							Envoyer
-						</span>
-					</button>
-				</div>
-			</form>
+                <label class="label-clara" for="message">Que voulez vous ? <span class="rouge"> *</span></label>
+                <div class="wrap-clara">
+                    <textarea id="message" class="clara" name="message" placeholder="Ecrivez votre commentaire"></textarea>
+                </div>
+        <?php   } ?>
+                <div class="container-ben-btn">
+                    <button type="submit"  name="go" class="ben-btn">
+                        <span>
+                            Envoyer
+                        </span>
+                    </button>
+                </div>
+            </form>
 		</div>
 	</div>
 </body>

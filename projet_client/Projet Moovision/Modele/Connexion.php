@@ -22,8 +22,13 @@
             $_SESSION['Connecté'] = false;
         } else {
             $_SESSION["erreur"] = null;
-            $_SESSION['user'] = $result['username'];
             $_SESSION['Connecté'] = true;
+            $_SESSION['username'] = $result['username'];
+            $_SESSION['prenom'] = $result['prenom'];
+            $_SESSION['nom'] = $result['nom'];
+            $_SESSION['mail'] = $result['mail'];
+            $_SESSION['telephone'] = $result['telephone'];
+            $_SESSION['role'] = $result['role'];
             $chemin = 'Location: ../index.php';
         }
     }

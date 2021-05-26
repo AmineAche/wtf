@@ -1,6 +1,10 @@
 <!doctype html>
     <?php
-        session_start();  
+        session_start();
+        
+        // if($_SESSION['Connecté'] == true) {
+        //     header('Location: ../../index.php');
+        // }
     ?>
     <head>
         <meta type="content" charset="utf-8" />
@@ -74,7 +78,11 @@
                 <input type="tel" name="telephone" value="" placeholder="Votre numéro de téléphone">
                 <input type="text" name="adresse" value="" placeholder="Votre adresse">
                 <input type="text" name="localite" value="" placeholder="Votre ville">
-                <input type="text" name="salaire" value="" placeholder="Tranche de votre salaire">
+                <h3 style="font-size: 20px;">Tranche de votre salaire</h3>
+                <input type="radio" name="salaire" value="0" checked>
+                <label for="huey">> 50K euros / ans</label>
+                <input type="radio" name="salaire" value="1">
+                <label for="dewey">< 50K euros / ans</label>
                 <input type="text" name="handicap" value="" placeholder="Votre certification d'handicap">
                 <?php 
                         echo ($_SESSION['error']);

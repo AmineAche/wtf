@@ -2,13 +2,13 @@
     <?php
         session_start(); 
 
-        if($_SESSION['Connecté'] == true) {
+        if($_SESSION['Connecté'] == false) {
             header('Location: ../../index.php');
         }
     ?>
     <head>
         <meta type="content" charset="utf-8" />
-        <title>Page de connexion</title>
+        <title>Page Profil</title>
         <link rel="stylesheet" href="../css/inscription.css">
         <link rel="stylesheet" href="../css/index.css">
     </head>
@@ -41,30 +41,26 @@
                 </li>
                 <?php
                     if (isset($_SESSION['Connecté']) && $_SESSION['Connecté'] == true) { ?>
-                        <li class="choix-barre"><h1 style="color:#7b12de;"><?php echo ($_SESSION['user']); ?></h1><li>
-                 <?php   } else { ?>
-                    <li class="choix-barre">
-                        <a href="../html/inscription.php" class="lien-barre">INSCRIPTION</a>
-                    </li>
-                 <?php } ?>
+                        <li class="choix-barre"><h1 style="color:#7b12de;"><a href="profil.php"><?php echo ($_SESSION['username']); ?></a></h1><li>
+                 <?php   } ?>
             </ul>
         </nav>
   </header>
 	<div class="container">
 		<div class="card_container">
-            <h1>Connexion</h1>
-            <form class="card" action="../../controleur/connexion.php" method="post">
-                <input type="text" name="mail" value="" placeholder="Mail">
-                <input type="password" name="mot_de_passe" value="" placeholder="Mot de passe">
-                <?php 
-                    echo ($_SESSION['erreur']);
-                ?>
-                <input type="submit" name="submit" value="Connexion">
-            </form>
-            <h2>Vous n'avez pas de compte ?</h2>
-            <a href="inscription.php">
-                <button class="btn-connect">Inscription</button>
+            <h1 style='font-size: 50px;'>PROFIL</h1>
+            <h1 style='font-size: 30px;'>Username: </h1> <h1><?php echo ($_SESSION['username']); ?></h1>
+            <h1 style='font-size: 30px;'>Prenom: <?php echo ($_SESSION['prenom']); ?></h1>
+            <h1 style='font-size: 30px;'>Nom: <?php echo ($_SESSION['nom']); ?></h1>
+            <h1 style='font-size: 30px;'>Mail: <?php echo ($_SESSION['mail']); ?></h1>
+            <h1 style='font-size: 30px;'>Telephone: <?php echo ($_SESSION['telephone']); ?></h1>
+            <h1 style='font-size: 30px;'>Adresse: <?php echo ($_SESSION['adresse']); ?></h1>
+            <h1 style='font-size: 30px;'>Localite: <?php echo ($_SESSION['localite']); ?></h1>
+            <h1 style='font-size: 30px;'>Salaire: <?php echo ($_SESSION['salaire']); ?></h1>
+            <a href="../../controleur/deconnexion.php">
+                <button class="btn-connect">Deconnexion</button>
             </a>
+            </form>
         </div>
     </div>
         
