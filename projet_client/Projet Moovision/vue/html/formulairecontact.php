@@ -51,7 +51,7 @@
           </li>
           <?php
               if (isset($_SESSION['Connecté']) && $_SESSION['Connecté'] == true) { ?>
-                  <li class="choix-barre"><h1 style="color:#7b12de;"><?php echo ($_SESSION['username']); ?></h1><li>
+                  <li class="choix-barre"><h1 style="color:#7b12de;"><?php echo ($_SESSION['user']); ?></h1><li>
           <?php   } else { ?>
               <li class="choix-barre">
                   <a href="../html/inscription.php" class="lien-barre">INSCRIPTION</a>

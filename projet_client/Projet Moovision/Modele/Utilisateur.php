@@ -34,9 +34,6 @@
             ':certification_handicap' => $_SESSION['handicap']
         ));
 
-        $arr = $req->errorInfo();
-        print_r($arr);
-
         $chemin = 'Location: ../vue/html/connexion.php';
     }
 ?>

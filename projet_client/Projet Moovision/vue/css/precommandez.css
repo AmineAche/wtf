@@ -55,6 +55,7 @@ img {
   font-size: 25px;
   padding-top: 109px;
   font-weight: 400;
+  width: auto;
   font-family: "Montserrat", arial, sans-serif;
     font-weight: 300;
     text-transform: uppercase;
@@ -85,7 +86,7 @@ img {
   border: 1px solid #7b12de;
   border-radius: 0.7rem;
   margin-left: 50%;
-
+  height: 50px;
 }
 
 .buttonvalid:hover {

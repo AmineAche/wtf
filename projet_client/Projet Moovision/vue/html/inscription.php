@@ -49,7 +49,7 @@
                 </li>
                 <?php
                     if (isset($_SESSION['Connecté']) && $_SESSION['Connecté'] == true) { ?>
-                        <li class="choix-barre"><h1 style="color:#7b12de;"><?php echo ($_SESSION['username']); ?></h1><li>
+                        <li class="choix-barre"><h1 style="color:#7b12de;"><?php echo ($_SESSION['user']); ?></h1><li>
                  <?php   } else { ?>
                     <li class="choix-barre">
                         <a href="../html/inscription.php" class="lien-barre">INSCRIPTION</a>
@@ -66,6 +66,9 @@
                 <input type="text" name="prenom" value="" placeholder="Votre prénom">
                 <input type="text" name="nom" value="" placeholder="Votre nom">
                 <input type="text" name="mail" value="" placeholder="Votre mail">
+                <?php
+                    echo ($_SESSION['erreurmail']);
+                ?>
                 <input type="password" name="mot_de_passe" value="" placeholder="Votre Mot de passe">
                 <input type="password" name="cmot_de_passe" value="" placeholder="Confirmez votre Mot de passe">
                 <input type="tel" name="telephone" value="" placeholder="Votre numéro de téléphone">
@@ -73,6 +76,10 @@
                 <input type="text" name="localite" value="" placeholder="Votre ville">
                 <input type="text" name="salaire" value="" placeholder="Tranche de votre salaire">
                 <input type="text" name="handicap" value="" placeholder="Votre certification d'handicap">
+                <?php 
+                        echo ($_SESSION['error']);
+                        echo ($_SESSION['erreur']);
+                    ?>
                 <input type="submit" name="go" value="S'inscrire">
             </form>
             <h2>Vous avez déjà un compte ?</h2>

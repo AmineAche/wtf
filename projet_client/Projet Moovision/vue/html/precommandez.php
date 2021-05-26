@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <?php
        session_start();
+       include '../../controleur/produits.php';
+       global $result;
 ?>
 <html>
   <head>
@@ -49,7 +51,7 @@
           </li>
           <?php
               if (isset($_SESSION['Connecté']) && $_SESSION['Connecté'] == true) { ?>
-                  <li class="choix-barre"><h1 style="color:#7b12de;"><?php echo ($_SESSION['username']); ?></h1><li>
+                  <li class="choix-barre"><h1 style="color:#7b12de;"><?php echo ($_SESSION['user']); ?></h1><li>
           <?php   } else { ?>
               <li class="choix-barre">
                   <a href="../html/inscription.php" class="lien-barre">INSCRIPTION</a>
@@ -63,14 +65,18 @@
 </div>
 
 <table class="tableautotal">
+  <th rowspan="4" class="titrelarge">Produits</th>
+  <?php
+  $i=0;
+    foreach($result as $produit) { 
+      $i++?>
    <tr class="ligne">
-       <th rowspan="3" class="titrelarge">Produits</th>
        <td class="cell">
-        <img src="../images/gant.png">
+        <img src="<?php echo $produit['image']; ?>">
         <br>
-        Gant Moovision
+        <?php echo $produit['Nom'] ?>
       </td>
-       <td class="cell large">100€</td>
+       <td class="cell large"><?php echo $produit['Prix']; ?></td>
        <td class="cell">
         <input
               type="text"
@@ -78,74 +84,16 @@
               maxlength="10"
               value="0"
               title=""
-              id="qty1"
-              class="input-text"
-              disabled
-            />
-            <div class="qty_inc_dec">
-              <i class="increment" onclick="incrementQty1()">+</i>
-              <i class="decrement" onclick="decrementQty1()">-</i>
-            </div>
-
-                          <div class="buttpay" onclick="calculTotal()">
+              id="qty<?php echo $i?>"
+              class="input-text"/>
+        <div class="buttpay" onclick="calculTotal()">
              Ajouter
-
-            </div>
-          </td>
-   </tr>
-   <tr class="ligne">
-       <td class="cell">
-        <img src="../images/housse.jpg"><br>
-        Housse de protection gant Moovision
+        </div>
       </td>
-       <td class="cell large">20€</td>
-       <td class="cell"><input
-              type="text"
-              name="qty2"
-              maxlength="10"
-              value="0"
-              title=""
-              class="input-text"
-              id="qty2"
-              disabled
-            />
-            <div class="qty_inc_dec">
-              <i class="increment" onclick="incrementQty2()">+</i>
-              <i class="decrement" onclick="decrementQty2()">-</i>
-            </div>
-                <div class="buttpay" onclick="calculTotal()">
-             Ajouter
-
-            </div>
-         </td>
    </tr>
-   <tr class="ligne">
-       <td class="cell">
-        <img src="../images/charger.png"><br>
-        Chargeur de gant Moovision
-      </td>
-       <td class="cell large">8.50€</td>
-       <td class="cell"><input
-              type="text"
-              name="qty3"
-              id="qty3"
-              maxlength="10"
-              value="0"
-              title=""
-              class="input-text"
-              disabled
-            />
-            <div class="qty_inc_dec">
-              <i class="increment" onclick="incrementQty3()">+</i>
-              <i class="decrement" onclick="decrementQty3()">-</i>
-            </div>
-                <div class="buttpay" onclick="calculTotal()">
-             Ajouter
-
-            </div>
-
-         </td>
-   </tr>
+   <?php
+     }
+    ?>
    <tr class="ligne">
        <th class="titrelarge">Livraison</th>
        <td colspan="3" class="cell">10€ de livraison</td>
@@ -156,9 +104,17 @@
    </tr class="ligne">
 </table>
 
+<?php if(empty($_POST['total'])) {
+    echo $_SESSION['erreurprix'];
+  } ?>
+<?php echo $_SESSION['erreur_commande'] ?>
+
+<form action="../../controleur/commande.php" method="post">
+  <input id="prix" type="hidden" name="total" value="">
+  <input id="quantite" type="hidden" name="quantite" value="">
 <?php
     if (isset($_SESSION['Connecté']) && $_SESSION['Connecté'] == true) { ?>
-        <a href="youdidit.php" class="buttonvalid">VALIDEZ</a>
+         <button name="button" input="submit" class="buttonvalid">VALIDEZ</button></form>
 <?php   } else { ?>
     <p style="text-align:center; font-size: 25px">Vous devez être connecté afin de valider un panier !</p>
 <?php } ?>

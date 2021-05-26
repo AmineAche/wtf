@@ -22,6 +22,7 @@
             $_SESSION['Connecté'] = false;
         } else {
             $_SESSION["erreur"] = null;
+            $_SESSION['user'] = $result['username'];
             $_SESSION['Connecté'] = true;
             $chemin = 'Location: ../index.php';
         }
