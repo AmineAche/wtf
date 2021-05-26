@@ -43,6 +43,10 @@ header {
   font-family: "Quicksand", sans-serif;
 }
 
+.choix-barre h1 {
+  width: auto;
+}
+
 .message-accueil {
  
   max-width: 105rem;
@@ -83,7 +87,7 @@ nav {
 
 @media screen and (min-width: 1600px) {
   nav {
-    width: 80%;
+    width: 90%;
   }
 }
 

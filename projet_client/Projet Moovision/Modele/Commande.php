@@ -6,13 +6,13 @@
 
     $q = $db->prepare("SELECT * FROM Utilisateurs WHERE username = :username");
     $q->execute([
-        'username' => $_SESSION['user'] 
+        'username' => $_SESSION['username'] 
     ]);
     $result = $q->fetch();
 
     if (!$result) {
         $_SESSION['erreur_commande'] = "Désolé ! Il y a un problème avec votre commande, essayez plus tard.";
-        $chemin = 'Location: ../vue/html/precommandez.php';
+        $chemin = 'Location: ../index.php';
     } else {
 
         $req = $db->prepare("INSERT INTO Commande(prix,quantite_total,adresse_expedition,id_utilisateur) VALUES(:prix,:quantite_total,:adresse_expedition,:id_utilisateur)");

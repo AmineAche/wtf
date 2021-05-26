@@ -20,7 +20,7 @@
 
         $hashpass = password_hash($_SESSION['mot_de_passe'], PASSWORD_BCRYPT, $options);
 
-        $req = $db->prepare("INSERT INTO Utilisateurs(username,prenom,nom,mail,mot_de_passe,telephone,adresse,localite,salaire,certification_handicap) VALUES(:username,:prenom,:nom,:mail,:mot_de_passe,:telephone,:adresse,:localite,:salaire,:certification_handicap)");
+        $req = $db->prepare("INSERT INTO Utilisateurs(username,prenom,nom,mail,mot_de_passe,telephone,adresse,localite,salaire) VALUES(:username,:prenom,:nom,:mail,:mot_de_passe,:telephone,:adresse,:localite,:salaire)");
         $req->execute(array(
             ':username' => $_SESSION['username'],
             ':prenom' => $_SESSION['prenom'],
@@ -30,8 +30,7 @@
             ':telephone' => $_SESSION['telephone'],
             ':adresse' =>  $_SESSION['adresse'],
             ':localite' =>  $_SESSION['localite'],
-            ':salaire' => $_SESSION['salaire'],
-            ':certification_handicap' => $_SESSION['handicap']
+            ':salaire' => $_SESSION['salaire']
         ));
 
         $chemin = 'Location: ../vue/html/connexion.php';

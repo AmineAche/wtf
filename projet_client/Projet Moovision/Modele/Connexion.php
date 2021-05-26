@@ -29,6 +29,9 @@
             $_SESSION['mail'] = $result['mail'];
             $_SESSION['telephone'] = $result['telephone'];
             $_SESSION['role'] = $result['role'];
+            $_SESSION['adresse'] = $result['adresse'];
+            $_SESSION['localite'] = $result['localite'];
+            $_SESSION['salaire'] = $result['salaire'];
             $chemin = 'Location: ../index.php';
         }
     }

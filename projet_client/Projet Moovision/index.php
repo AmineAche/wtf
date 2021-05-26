@@ -54,9 +54,7 @@
           <a href="./vue/html/notrehistoire.php" class="lien-barre">NOTRE HISTOIRE</a>
           </li>
           <li class="choix-barre">
-          <a href="./vue/html/decouvrezmoovision.php" class="lien-barre"
-              >DÉCOUVREZ MOOVISION</a
-          >
+          <a href="./vue/html/decouvrezmoovision.php" class="lien-barre">DÉCOUVREZ MOOVISION</a>
           </li>
           <li class="choix-barre">
           <a href="./vue/html/Contacteznous.php" class="lien-barre">CONTACT</a>
@@ -66,12 +64,22 @@
           </li>
           <?php
               if (isset($_SESSION['Connecté']) && $_SESSION['Connecté'] == true) { ?>
-                  <li class="choix-barre"><h1 style="color:#7b12de;"><a href="./vue/html/profil.php"><?php echo ($_SESSION['user']); ?></a></h1><li>
-              <?php        if ($_SESSION['role'] == '2') {?>
-          <li class="choix-barre"><h1 style="color:#7b12de;"><a href="./vue/html/profil.php">ADMIN</a></h1><li>
-          <?php   }} else { ?>
+                  <li class="choix-barre">
+                    <h1 style="color:#7b12de;">
+                    <a href="./vue/html/profil.php"><?php echo $_SESSION['username']; ?></a></h1>
+                  </li>
+                  <?php if ($_SESSION['role'] == '2') {?>
+                    <li class="choix-barre">
+                      <h1 style="color:#7b12de;">
+                      <a href="./vue/html/admin.php">ADMIN</a></h1>
+                    </li>
+                  <?php   }; if($_SESSION['role'] == '1') {?>
+                    <li class="choix-barre">
+                      <h1 style="color:#7b12de;">
+                      <a href="./vue/html/association.php">ASSOCIATION</a></h1>
+                    </li>
+                  <?php }} else { ?>
               <li class="choix-barre">
-                  <a href="./vue/html/inscription.php" class="lien-barre">INSCRIPTION</a>
                   <a href="./vue/html/connexion.php" class="lien-barre">CONNEXION</a>
               </li>
           <?php } ?>
@@ -125,7 +133,7 @@
   <footer>
     <div class="footer">
       <table width="100%">
-        <tr style="align-content:center">
+        <tr style="text-align:center">
           <td>
             NOUS JOINDRE
             <a href="./vue/html/Contacteznous.php"

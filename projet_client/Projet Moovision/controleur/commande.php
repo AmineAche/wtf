@@ -7,7 +7,6 @@
             $erreur = NULL;
             $valid = true;
          
-
         foreach( array('total', 'quantite') as $key ) {
             if( trim($_POST[$key]) != '') {
                 $info[$key] = htmlspecialchars($_POST[$key]);
@@ -21,7 +20,6 @@
             $_SESSION["erreurprix"] = "Vous n'avez rien dans votre panier";   
             header('Location: ../vue/html/precommandez.php');
             exit;
-            
             
         } else {
             $_SESSION['erreurprix'] = null;

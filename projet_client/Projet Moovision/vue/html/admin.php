@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <?php
        session_start();
+
+       if($_SESSION['role'] != "2") {
+        header('Location: ../../index.php');
+       }
 ?>
 <html>
   <head>
@@ -8,7 +12,7 @@
     <meta charset="utf-8" />
 
     <link rel="stylesheet" type="text/css" href="../css/index.css" />
-    <link rel="stylesheet" type="text/css" href="../css/youdidit.css" />
+    <link rel="stylesheet" type="text/css" href="../css/assop.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap"
@@ -60,7 +64,7 @@
                   <?php   }; if($_SESSION['role'] == '1') {?>
                     <li class="choix-barre">
                       <h1 style="color:#7b12de;">
-                      <a href="./association.php">ASSOCIATION</a></h1>
+                      <a href="./profil.php">ASSOCIATION</a></h1>
                     </li>
                   <?php }} else { ?>
               <li class="choix-barre">
@@ -71,15 +75,14 @@
     </nav>
   </header>
 
-
-<div class="gif"><img src="https://media.giphy.com/media/h2CbU9bZKia9w1T5UQ/giphy.gif">
-
-<h1>YOU DID IT ! Félicitation de vous être lancé dans le monde Moovision ! Nous vous remercions pour votre confiance.</h1>
-
-</div>
-
-
-
+<body>
+  <div class="preco"><h1>Administateur - Dashboard </h1>
+  </div>
+  <div class="container">
+    <a href="adminuser.php"><div class="column"><h1>UTILISATEURS</h1></div></a>
+    <a href="adminstock.php"><div class="column"><h1>PRODUITS</h1></div></a>
+  </div>
+</body>
 
   <footer>
     <div class="footer">

@@ -51,87 +51,100 @@
           </li>
           <?php
               if (isset($_SESSION['Connecté']) && $_SESSION['Connecté'] == true) { ?>
-                  <li class="choix-barre"><h1 style="color:#7b12de;"><?php echo ($_SESSION['user']); ?></h1><li>
-          <?php   } else { ?>
+                  <li class="choix-barre">
+                    <h1 style="color:#7b12de;">
+                    <a href="./profil.php"><?php echo $_SESSION['username']; ?></a></h1>
+                  </li>
+                  <?php if ($_SESSION['role'] == '2') {?>
+                    <li class="choix-barre">
+                      <h1 style="color:#7b12de;">
+                      <a href="./admin.php">ADMIN</a></h1>
+                    </li>
+                  <?php   }; if($_SESSION['role'] == '1') {?>
+                    <li class="choix-barre">
+                      <h1 style="color:#7b12de;">
+                      <a href="./association.php">ASSOCIATION</a></h1>
+                    </li>
+                  <?php }} else { ?>
               <li class="choix-barre">
-                  <a href="../html/inscription.php" class="lien-barre">INSCRIPTION</a>
+                  <a href="./connexion.php" class="lien-barre">CONNEXION</a>
               </li>
           <?php } ?>
         </ul>
     </nav>
   </header>
 
-<div class="preco"><h1>Pré-commandez vos articles Moovision</h1>
-</div>
+  <div class="preco"><h1>Pré-commandez vos articles Moovision</h1>
+  </div>
 
-<table class="tableautotal">
-  <th rowspan="4" class="titrelarge">Produits</th>
+  <table class="tableautotal">
+    <th rowspan="4" class="titrelarge">Produits</th>
+    <?php $i=0; foreach($result as $produit) {  $i++?>
+      <tr class="ligne">
+          <td class="cell">
+            <img src="<?php echo $produit['image']; ?>">
+            <br>
+            <?php echo $produit['Nom'] ?>
+          </td>
+          <td class="cell large"><?php echo $produit['Prix']; ?></td>
+          <td class="cell">
+            <input
+                  type="text"
+                  name="qty1"
+                  maxlength="10"
+                  value="0"
+                  title=""
+                  id="qty<?php echo $i?>"
+                  class="input-text"/>
+            <div class="buttpay" onclick="calculTotal()">
+                Ajouter
+            </div>
+          </td>
+      </tr>
+    <?php } ?>
+    <tr class="ligne">
+        <th class="titrelarge">Livraison</th>
+        <td colspan="3" class="cell">10€ de livraison</td>
+    </tr>
+    <?php if($_SESSION['salaire'] != null && $_SESSION['salaire']== "1") { ?>
+      <tr class="ligne">
+        <th class="titrelarge" id="reduc">Réduction</th>
+        <td colspan="3" class="cell">10%</td>
+    </tr>
+    <?php } ?>
+    <tr>
+        <th class="titrelarge">Total</th>
+        <td colspan="3" class="cell"><span id="total"></td>
+    </tr class="ligne">
+  </table>
+
+  <?php if(empty($_POST['total'])) {
+      echo $_SESSION['erreurprix']; } ?>
+  <?php echo $_SESSION['erreur_commande'] ?>
+
+  <form action="../../controleur/commande.php" method="post">
+    <input id="prix" type="hidden" name="total" value="">
+    <input id="quantite" type="hidden" name="quantite" value="">
   <?php
-  $i=0;
-    foreach($result as $produit) { 
-      $i++?>
-   <tr class="ligne">
-       <td class="cell">
-        <img src="<?php echo $produit['image']; ?>">
-        <br>
-        <?php echo $produit['Nom'] ?>
-      </td>
-       <td class="cell large"><?php echo $produit['Prix']; ?></td>
-       <td class="cell">
-        <input
-              type="text"
-              name="qty1"
-              maxlength="10"
-              value="0"
-              title=""
-              id="qty<?php echo $i?>"
-              class="input-text"/>
-        <div class="buttpay" onclick="calculTotal()">
-             Ajouter
-        </div>
-      </td>
-   </tr>
-   <?php
-     }
-    ?>
-   <tr class="ligne">
-       <th class="titrelarge">Livraison</th>
-       <td colspan="3" class="cell">10€ de livraison</td>
-   </tr>
-   <tr>
-       <th class="titrelarge">Total</th>
-       <td colspan="3" class="cell"><span id="total"></td>
-   </tr class="ligne">
-</table>
+      if (isset($_SESSION['Connecté']) && $_SESSION['Connecté'] == true) { ?>
+          <button name="button" input="submit" class="buttonvalid">VALIDEZ</button></form>
+  <?php   } else { ?>
+      <p style="text-align:center; font-size: 25px">Vous devez être connecté afin de valider un panier !</p>
+  <?php } ?>
 
-<?php if(empty($_POST['total'])) {
-    echo $_SESSION['erreurprix'];
-  } ?>
-<?php echo $_SESSION['erreur_commande'] ?>
-
-<form action="../../controleur/commande.php" method="post">
-  <input id="prix" type="hidden" name="total" value="">
-  <input id="quantite" type="hidden" name="quantite" value="">
-<?php
-    if (isset($_SESSION['Connecté']) && $_SESSION['Connecté'] == true) { ?>
-         <button name="button" input="submit" class="buttonvalid">VALIDEZ</button></form>
-<?php   } else { ?>
-    <p style="text-align:center; font-size: 25px">Vous devez être connecté afin de valider un panier !</p>
-<?php } ?>
-
-    </div>
-<br> 
-<br>
-<br>
-<br> 
-<br>
-<br>
+      </div>
+  <br> 
+  <br>
+  <br>
+  <br> 
+  <br>
+  <br>
 
 
-<footer>
+  <footer>
     <div class="footer">
       <table width="100%">
-        <tr style="align-content:center">
+        <tr style="text-align:center">
           <td>
             NOUS JOINDRE
             <a href="Contacteznous.php"

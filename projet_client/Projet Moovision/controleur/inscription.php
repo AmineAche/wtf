@@ -11,7 +11,7 @@
             $erreur = NULL;
          
 
-        foreach( array('username', 'prenom', 'nom', 'mail', 'mot_de_passe', 'telephone', 'adresse', 'localite', 'salaire', 'handicap') as $key ) {
+        foreach( array('username', 'prenom', 'nom', 'mail', 'mot_de_passe', 'telephone', 'adresse', 'localite', 'salaire') as $key ) {
             if( isset($_POST[$key]) && trim($_POST[$key]) != '' ) {
 
                     $info[$key] = htmlspecialchars($_POST[$key]);
@@ -68,9 +68,8 @@
             $_SESSION['adresse'] = $_POST['adresse'];
             $_SESSION['localite'] = $_POST['localite'];
             $_SESSION['salaire'] = $_POST['salaire'];
-            $_SESSION['handicap'] = $_POST['handicap'];
             
-            include '../Modele/Utilisateur.php';
+            include '../Modele/Inscription.php';
             header($chemin);
             exit;
         }

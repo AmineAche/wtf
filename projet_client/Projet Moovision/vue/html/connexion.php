@@ -9,7 +9,7 @@
     <head>
         <meta type="content" charset="utf-8" />
         <title>Page de connexion</title>
-        <link rel="stylesheet" href="../css/inscription.css">
+        <link rel="stylesheet" href="../css/connexion.css">
         <link rel="stylesheet" href="../css/index.css">
     </head>
 
@@ -26,27 +26,22 @@
                 <a href="../../index.php" class="lien-barre">ACCUEIL</a>
                 </li>
                 <li class="choix-barre">
-                <a href="../html/notrehistoire.php" class="lien-barre">NOTRE HISTOIRE</a>
+                <a href="./notrehistoire.php" class="lien-barre">NOTRE HISTOIRE</a>
                 </li>
                 <li class="choix-barre">
-                <a href="../html/decouvrezmoovision.php" class="lien-barre"
-                    >DÉCOUVREZ MOOVISION</a
-                >
+                <a href="./decouvrezmoovision.php" class="lien-barre">DÉCOUVREZ MOOVISION</a>
                 </li>
                 <li class="choix-barre">
-                <a href="../html/Contacteznous.php" class="lien-barre">CONTACT</a>
+                <a href="./Contacteznous.php" class="lien-barre">CONTACT</a>
                 </li>
+
                 <li class="choix-barre">
-                <a href="../html/precommandez.php" class="lien-barre">PRÉ-COMMANDEZ</a>
+                <a href="./precommandez.php" class="lien-barre">PRÉ-COMMANDEZ</a>
                 </li>
-                <?php
-                    if (isset($_SESSION['Connecté']) && $_SESSION['Connecté'] == true) { ?>
-                        <li class="choix-barre"><h1 style="color:#7b12de;"><?php echo ($_SESSION['user']); ?></h1><li>
-                 <?php   } else { ?>
-                    <li class="choix-barre">
-                        <a href="../html/inscription.php" class="lien-barre">INSCRIPTION</a>
-                    </li>
-                 <?php } ?>
+                
+                <li class="choix-barre">
+                    <a href="./connexion.php" class="lien-barre">CONNEXION</a>
+                </li>
             </ul>
         </nav>
   </header>
@@ -71,7 +66,7 @@
         <footer>
             <div class="footer">
             <table width="100%">
-                <tr style="align-content:center">
+                <tr style="text-align:center">
                 <td>
                     NOUS JOINDRE
                     <a href="Contacteznous.php"

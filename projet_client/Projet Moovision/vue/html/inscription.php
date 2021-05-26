@@ -2,15 +2,17 @@
     <?php
         session_start();
         
-        // if($_SESSION['Connecté'] == true) {
-        //     header('Location: ../../index.php');
-        // }
+        if($_SESSION['Connecté'] == true) {
+            header('Location: ../../index.php');
+        }
     ?>
     <head>
         <meta type="content" charset="utf-8" />
         <title>Page d'inscription</title>
         <link rel="stylesheet" href="../css/inscription.css">
         <link rel="stylesheet" href="../css/index.css">
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap" rel="stylesheet">
     </head>
 
     <body>
@@ -38,59 +40,75 @@
                 <a href="../../index.php" class="lien-barre">ACCUEIL</a>
                 </li>
                 <li class="choix-barre">
-                <a href="../html/notrehistoire.php" class="lien-barre">NOTRE HISTOIRE</a>
+                <a href="./notrehistoire.php" class="lien-barre">NOTRE HISTOIRE</a>
                 </li>
                 <li class="choix-barre">
-                <a href="../html/decouvrezmoovision.php" class="lien-barre"
+                <a href="./decouvrezmoovision.php" class="lien-barre"
                     >DÉCOUVREZ MOOVISION</a
                 >
                 </li>
                 <li class="choix-barre">
-                <a href="../html/Contacteznous.php" class="lien-barre">CONTACT</a>
+                <a href="./Contacteznous.php" class="lien-barre">CONTACT</a>
                 </li>
                 <li class="choix-barre">
-                <a href="../html/precommandez.php" class="lien-barre">PRÉ-COMMANDEZ</a>
+                <a href="./precommandez.php" class="lien-barre">PRÉ-COMMANDEZ</a>
                 </li>
-                <?php
-                    if (isset($_SESSION['Connecté']) && $_SESSION['Connecté'] == true) { ?>
-                        <li class="choix-barre"><h1 style="color:#7b12de;"><?php echo ($_SESSION['user']); ?></h1><li>
-                 <?php   } else { ?>
-                    <li class="choix-barre">
-                        <a href="../html/inscription.php" class="lien-barre">INSCRIPTION</a>
-                    </li>
-                 <?php } ?>
+                <li class="choix-barre">
+                    <a href="./connexion.php" class="lien-barre">CONNEXION</a>
+                </li>
             </ul>
         </nav>
   </header>
 	<div class="container">
 		<div class="card_container">
-            <h1>Inscription</h1>
+            <div class="inscr">
+                Inscription
+            </div>
             <form class="card" action="../../controleur/inscription.php" method="post">
-                <input type="text" name="username" value="" placeholder="Votre username">
-                <input type="text" name="prenom" value="" placeholder="Votre prénom">
-                <input type="text" name="nom" value="" placeholder="Votre nom">
-                <input type="text" name="mail" value="" placeholder="Votre mail">
+                <label class="label-clara" >Vos Username, Nom et Prénom</label>
+                <div class="wrap-clara ">
+                <input class="input" type="text" name="username" value="" placeholder="Username">
+                <input class="input" type="text" name="prenom" value="" placeholder="Prénom">
+                <input class="input" type="text" name="nom" value="" placeholder="Nom">
+                </div>
+                <label class="label-clara" >Votre Mail</label>
+                <div class="wrap-clara ">
+                <input class="input" type="text" name="mail" value="" placeholder="Mail">
+                </div>
                 <?php
                     echo ($_SESSION['erreurmail']);
                 ?>
-                <input type="password" name="mot_de_passe" value="" placeholder="Votre Mot de passe">
-                <input type="password" name="cmot_de_passe" value="" placeholder="Confirmez votre Mot de passe">
-                <input type="tel" name="telephone" value="" placeholder="Votre numéro de téléphone">
-                <input type="text" name="adresse" value="" placeholder="Votre adresse">
-                <input type="text" name="localite" value="" placeholder="Votre ville">
-                <h3 style="font-size: 20px;">Tranche de votre salaire</h3>
-                <input type="radio" name="salaire" value="0" checked>
-                <label for="huey">> 50K euros / ans</label>
-                <input type="radio" name="salaire" value="1">
-                <label for="dewey">< 50K euros / ans</label>
-                <input type="text" name="handicap" value="" placeholder="Votre certification d'handicap">
+                <label class="label-clara" >Votre Mot de Passe</label>
+                <div class="wrap-clara ">
+                <input class="input" type="password" name="mot_de_passe" value="" placeholder="Mot de passe">
+                <input class="input" type="password" name="cmot_de_passe" value="" placeholder="Confirmez votre Mot de passe">
+                </div>
+                <label class="label-clara" >Votre Numéro de téléphone</label>
+                <div class="wrap-clara ">
+                <input class="input" type="tel" name="telephone" value="" placeholder="Numéro de téléphone">
+                </div>
+                <label class="label-clara" >Votre Adresse et Ville</label>
+                <div class="wrap-clara ">
+                <input class="input" type="text" name="adresse" value="" placeholder="Adresse">
+                <input class="input" type="text" name="localite" value="" placeholder="Ville">
+            </div>
+                
+                <label class="label-clara" >Votre tranche de salaire (Afin de bénéficier d'une réduction)</label>
+                <div class="bout">
+                <input class="input2" type="radio" name="salaire" value="0" checked>
+                <label for=">50K">> 50K euros / ans</label>
+                </div>
+                <div class="bout">
+                <input class="input2" type="radio" name="salaire" value="1">
+                <label for="<50K">< 50K euros / ans</label>
+                </div>
                 <?php 
                         echo ($_SESSION['error']);
                         echo ($_SESSION['erreur']);
                     ?>
-                <input type="submit" name="go" value="S'inscrire">
+                <input class="input"type="submit" name="go" value="S'inscrire">
             </form>
-            <h2>Vous avez déjà un compte ?</h2>
+            <div class="vadc">Vous avez déjà un compte ?</div>
             <a href="connexion.php">
                 <button class="btn-connect">Connexion</button>
             </a>
@@ -100,7 +118,7 @@
         <footer>
             <div class="footer">
             <table width="100%">
-                <tr style="align-content:center">
+                <tr style="text-align:center">
                 <td>
                     NOUS JOINDRE
                     <a href="Contacteznous.php"

@@ -48,10 +48,23 @@
           </li>
           <?php
               if (isset($_SESSION['Connecté']) && $_SESSION['Connecté'] == true) { ?>
-                  <li class="choix-barre"><h1 style="color:#7b12de;"><?php echo ($_SESSION['user']); ?></h1><li>
-          <?php   } else { ?>
+                  <li class="choix-barre">
+                    <h1 style="color:#7b12de;">
+                    <a href="./profil.php"><?php echo $_SESSION['username']; ?></a></h1>
+                  </li>
+                  <?php if ($_SESSION['role'] == '2') {?>
+                    <li class="choix-barre">
+                      <h1 style="color:#7b12de;">
+                      <a href="./admin.php">ADMIN</a></h1>
+                    </li>
+                  <?php   }; if($_SESSION['role'] == '1') {?>
+                    <li class="choix-barre">
+                      <h1 style="color:#7b12de;">
+                      <a href="./association.php">ASSOCIATION</a></h1>
+                    </li>
+                  <?php }} else { ?>
               <li class="choix-barre">
-                  <a href="../html/inscription.php" class="lien-barre">INSCRIPTION</a>
+                  <a href="./connexion.php" class="lien-barre">CONNEXION</a>
               </li>
           <?php } ?>
         </ul>
@@ -150,7 +163,7 @@
 <footer>
     <div class="footer">
       <table width="100%">
-        <tr style="align-content:center">
+        <tr style="text-align:center">
           <td>
             NOUS JOINDRE
             <a href="Contacteznous.php"

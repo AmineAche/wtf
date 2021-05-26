@@ -1,6 +1,6 @@
 <?php
 
-    include '../../modele/Produit.php';
+    include '../../modele/Utilisateurs.php';
     global $result;
 
     $result = $result;
