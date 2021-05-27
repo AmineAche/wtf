@@ -1,6 +1,6 @@
 <?php
     $user = 'root';
-    $pass = 'root';
+    $pass = '';
 
     try{
         $opts = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);

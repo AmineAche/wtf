@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<?php
-       session_start();
+<?php 
+      if (isset($_SESSION)) {
+        session_start();
+      }
        include '../../controleur/produits.php';
        global $result;
 ?>
@@ -118,9 +120,11 @@
     </tr class="ligne">
   </table>
 
-  <?php if(empty($_POST['total'])) {
+  <?php if(empty($_POST['total']) && isset($_SESSION['erreurprix'])) {
       echo $_SESSION['erreurprix']; } ?>
-  <?php echo $_SESSION['erreur_commande'] ?>
+  <?php if(isset($_SESSION['erreur_commande'])) {
+      echo ($_SESSION['erreur_commande']);
+  }?>
 
   <form action="../../controleur/commande.php" method="post">
     <input id="prix" type="hidden" name="total" value="">

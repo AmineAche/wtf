@@ -51,9 +51,9 @@
             <form class="card" action="../../controleur/connexion.php" method="post">
                 <input type="text" name="mail" value="" placeholder="Mail">
                 <input type="password" name="mot_de_passe" value="" placeholder="Mot de passe">
-                <?php 
+                <?php if(isset($_SESSION['erreur'])) {
                     echo ($_SESSION['erreur']);
-                ?>
+                }?>
                 <input type="submit" name="submit" value="Connexion">
             </form>
             <h2>Vous n'avez pas de compte ?</h2>
