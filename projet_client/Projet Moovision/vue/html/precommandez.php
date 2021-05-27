@@ -108,7 +108,7 @@
         <th class="titrelarge">Livraison</th>
         <td colspan="3" class="cell">10€ de livraison</td>
     </tr>
-    <?php if($_SESSION['salaire'] != null && $_SESSION['salaire']== "1") { ?>
+    <?php if(isset($_SESSION['salaire']) && $_SESSION['salaire'] != null && $_SESSION['salaire']== "1") { ?>
       <tr class="ligne">
         <th class="titrelarge" id="reduc">Réduction</th>
         <td colspan="3" class="cell">10%</td>
@@ -130,10 +130,11 @@
     <input id="prix" type="hidden" name="total" value="">
     <input id="quantite" type="hidden" name="quantite" value="">
   <?php
-      if (isset($_SESSION['Connecté']) && $_SESSION['Connecté'] == true) { ?>
+      if (isset($_SESSION['Connecté']) && $_SESSION['Connecté'] == true && ($_SESSION['handicap_user']) == "1") { ?>
           <button name="button" input="submit" class="buttonvalid">VALIDEZ</button></form>
   <?php   } else { ?>
-      <p style="text-align:center; font-size: 25px">Vous devez être connecté afin de valider un panier !</p>
+      <p style="text-align:center; font-size: 25px">Vous devez être <?php if((isset($_SESSION['handicap_user']) && ($_SESSION['handicap_user'] != "1"))) { 
+        echo "certifié";} else {echo "connecté";} ?> afin de valider un panier !</p>
   <?php } ?>
 
       </div>

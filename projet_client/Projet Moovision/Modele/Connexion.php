@@ -32,6 +32,7 @@
             $_SESSION['adresse'] = $result['adresse'];
             $_SESSION['localite'] = $result['localite'];
             $_SESSION['salaire'] = $result['salaire'];
+            $_SESSION['handicap_user'] = $result['certification_handicap'];
             $chemin = 'Location: ../index.php';
         }
     }
